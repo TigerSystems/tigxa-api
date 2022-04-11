@@ -11,15 +11,15 @@ name: Auto Release
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 permissions:
   contents: read
 
 jobs:
-  build-linux:
+  build:
     outputs:
       release: ${{ steps.build.outputs.release }}
     permissions: write-all
@@ -56,7 +56,8 @@ jobs:
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
         arguments: build
-        
+      env:
+        build_number: ${{ github.run_number }}
         
     #- name: Upload Artifact (Linux)
     #  uses: actions/upload-artifact@v2.2.4
