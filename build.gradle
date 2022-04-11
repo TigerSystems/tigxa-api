@@ -5,6 +5,8 @@ plugins {
 group 'de.MarkusTieger.Tigxa.api'
 version '1.0.0'
 
+System.out.println("::set-output name=release::" + getVersion())
+
 repositories {
     mavenCentral()
 }
