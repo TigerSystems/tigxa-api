@@ -18,4 +18,6 @@ public interface ITab {
         return getType().name().equalsIgnoreCase(name);
     }
 
+    IWindow getWindow();
+
 }
