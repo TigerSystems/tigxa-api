@@ -1,14 +1,17 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    // id 'signing'
 }
 
-group 'de.MarkusTieger.Tigxa.api'
+group 'cf.tigersystems'
+archivesBaseName = 'tigxa-api'
 version '1.0.0'
 
 String env = System.getenv("build_number");
 
-if(env != null){
-    while(env.length() < 6){
+if (env != null) {
+    while (env.length() < 6) {
         env = "0" + env
     }
     System.out.println("::set-output name=build_number::" + env)
@@ -27,4 +30,35 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+
+    publications {
+
+        maven(MavenPublication) {
+
+            artifact("build/libs/" + this.getProject().name + "-" + this.getVersion() + ".jar") {
+                extension "jar"
+            }
+        }
+    }
+
+    repositories {
+
+        maven {
+
+            name "sonatype"
+
+            url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+
+            credentials {
+
+                username project.repoUser
+
+                password project.repoPassword
+
+            }
+        }
+    }
 }
