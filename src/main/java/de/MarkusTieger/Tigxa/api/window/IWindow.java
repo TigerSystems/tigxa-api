@@ -1,10 +1,14 @@
 package de.MarkusTieger.Tigxa.api.window;
 
+import de.MarkusTieger.Tigxa.api.gui.IScreen;
+
 import java.util.List;
 
 public interface IWindow {
 
     ITab add(String url, boolean autoselect);
+
+    ITab add(IScreen screen);
 
     List<ITab> listTabs();
 

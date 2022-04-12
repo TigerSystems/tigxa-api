@@ -2,4 +2,3 @@ gradle.properties
 build
 .idea
 .gradle
-secrets

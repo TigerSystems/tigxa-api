@@ -12,7 +12,10 @@ public interface ITab {
 
     void remove();
 
-    void setZoom(double factor);
+    TabType getType();
 
-    void print();
+    default boolean isType(String name){
+        return getType().name().equalsIgnoreCase(name);
+    }
+
 }
