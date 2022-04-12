@@ -58,6 +58,8 @@ jobs:
         arguments: build
       env:
         build_number: ${{ github.run_number }}
+        gituser: ${{ github.actor }}
+        gitpwd: ${{ secrets.GITHUB_TOKEN }}
         
     #- name: Upload Artifact (Linux)
     #  uses: actions/upload-artifact@v2.2.4
