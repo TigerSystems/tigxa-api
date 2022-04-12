@@ -3,6 +3,7 @@ package de.MarkusTieger.Tigxa.api.permission;
 import netscape.javascript.JSObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public interface IPermissionManager {
@@ -18,6 +19,12 @@ public interface IPermissionManager {
     }
 
     IPermissionResult requestPermissions(List<Permission> permissions);
+
+    default IPermissionResult requestPermissions(Permission[] permissions){
+        List<Permission> perms = new ArrayList<>();
+        Arrays.stream(permissions).forEach(perms::add);
+        return requestPermissions(perms);
+    }
 
     default IPermissionResult requestPermissions(JSObject js) {
 
