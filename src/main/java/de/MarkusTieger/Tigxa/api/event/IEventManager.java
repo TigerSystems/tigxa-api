@@ -6,6 +6,8 @@ public interface IEventManager {
 
     public void unregisterListener(IEventHandler listener);
 
+    public IEvent call(IEvent event);
+
     public IEventHandler[] getListeners();
 
 }
