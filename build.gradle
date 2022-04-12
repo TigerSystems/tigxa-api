@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'de.MarkusTieger'
-archivesBaseName = 'tigxa-api'
+archivesBaseName = this.getProject().getName()
 version '1.0.0'
 
 String env = System.getenv("build_number");
