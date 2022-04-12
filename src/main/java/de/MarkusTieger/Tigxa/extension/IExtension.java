@@ -1,6 +1,7 @@
 package de.MarkusTieger.Tigxa.extension;
 
 import de.MarkusTieger.Tigxa.api.event.IEventHandler;
+import de.MarkusTieger.Tigxa.api.window.IWindow;
 
 import java.awt.*;
 
@@ -22,8 +23,8 @@ public interface IExtension extends IEventHandler {
 
     void onDisable();
 
-    void onAction(IGUIWindow window, int relativeX, int relativeY, int absoluteX, int absoluteY);
+    void onAction(IWindow window, int relativeX, int relativeY, int absoluteX, int absoluteY);
 
-    void onAction(IGUIWindow window, String id);
+    void onAction(IWindow window, String id);
 
 }
