@@ -4,7 +4,7 @@ plugins {
     // id 'signing'
 }
 
-group 'cf.tigersystems'
+group 'de.MarkusTieger'
 archivesBaseName = 'tigxa-api'
 version '1.0.0'
 
@@ -32,7 +32,7 @@ test {
     useJUnitPlatform()
 }
 
-publishing {
+/*publishing {
 
     publications {
 
@@ -58,6 +58,32 @@ publishing {
 
                 password project.repoPassword
 
+            }
+        }
+    }
+}*/
+
+String user = findProperty("github.username")
+if(user == null) user = System.getenv("gituser")
+String pwd = findProperty("github.token")
+if(pwd == null) pwd = System.getenv("gitpwd")
+
+publishing {
+    repositories {
+        maven {
+            name = "Github"
+            url = uri("https://maven.pkg.github.com/TigerSystems/tigxa-api")
+            credentials {
+                username = user
+                password = pwd
+            }
+        }
+    }
+    publications {
+        register("jar", MavenPublication) {
+            from(components["java"])
+            pom {
+                url.set("https://github.com/TigerSystems/tigxa-api.git")
             }
         }
     }
