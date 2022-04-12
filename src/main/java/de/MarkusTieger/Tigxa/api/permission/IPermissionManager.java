@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IPermissionManager {
 
-    boolean hasPermission(Permission perm);
+    boolean hasPermission(Permission... perm);
 
     default Permission getPermissionByName(String name) {
         return Permission.valueOf(name);
