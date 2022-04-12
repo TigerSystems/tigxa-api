@@ -1,10 +1,11 @@
 package de.MarkusTieger.Tigxa.extension;
 
+import de.MarkusTieger.Tigxa.api.event.IEventHandler;
 import de.MarkusTieger.Tigxa.api.gui.IGUIWindow;
 
 import java.awt.*;
 
-public interface IExtension {
+public interface IExtension extends IEventHandler {
 
     String getName();
 

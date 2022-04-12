@@ -5,6 +5,7 @@ import de.MarkusTieger.Tigxa.api.event.IEventManager;
 import de.MarkusTieger.Tigxa.api.gui.IGUIManager;
 import de.MarkusTieger.Tigxa.api.permission.IPermissionManager;
 import de.MarkusTieger.Tigxa.api.window.IWindowManager;
+import de.MarkusTieger.Tigxa.extension.IExtension;
 
 public interface IAPI {
 
@@ -17,4 +18,6 @@ public interface IAPI {
     IEventManager getEventManager();
 
     IPermissionManager getPermissionManager();
+
+    IExtension getExtension();
 }
