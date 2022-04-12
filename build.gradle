@@ -84,6 +84,7 @@ publishing {
             from(components["java"])
             pom {
                 url.set("https://github.com/TigerSystems/tigxa-api.git")
+                version = this.getVersion() + (env == null ? "" : ("-" + env))
             }
         }
     }
