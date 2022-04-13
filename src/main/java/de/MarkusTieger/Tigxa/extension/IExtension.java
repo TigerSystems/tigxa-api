@@ -1,6 +1,7 @@
 package de.MarkusTieger.Tigxa.extension;
 
 import de.MarkusTieger.Tigxa.api.event.IEventHandler;
+import de.MarkusTieger.Tigxa.api.permission.Permission;
 import de.MarkusTieger.Tigxa.api.window.IWindow;
 
 import java.awt.*;
@@ -26,5 +27,7 @@ public interface IExtension extends IEventHandler {
     void onAction(IWindow window, int relativeX, int relativeY, int absoluteX, int absoluteY);
 
     void onAction(IWindow window, String id);
+
+    boolean hasPermission(Permission[] perms);
 
 }

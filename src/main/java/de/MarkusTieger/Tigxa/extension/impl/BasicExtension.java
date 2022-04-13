@@ -1,5 +1,7 @@
 package de.MarkusTieger.Tigxa.extension.impl;
 
+import de.MarkusTieger.Tigxa.api.permission.IPermissionManager;
+import de.MarkusTieger.Tigxa.api.permission.Permission;
 import de.MarkusTieger.Tigxa.extension.IExtension;
 
 import javax.imageio.ImageIO;
@@ -16,8 +18,10 @@ public abstract class BasicExtension implements IExtension {
     private final String[] authors;
 
     private final BufferedImage icon, dark_icon;
+    private final IPermissionManager perm;
 
-    public BasicExtension(String name, String version, String[] authors, URL path) {
+    public BasicExtension(IPermissionManager perm, String name, String version, String[] authors, URL path) {
+        this.perm = perm;
         this.name = name;
         this.version = version;
         this.authors = authors;
@@ -53,7 +57,8 @@ public abstract class BasicExtension implements IExtension {
         dark_icon = i;
     }
 
-    public BasicExtension(String name, String version, String[] authors, String base64) {
+    public BasicExtension(IPermissionManager perm, String name, String version, String[] authors, String base64) {
+        this.perm = perm;
         this.name = name;
         this.version = version;
         this.authors = authors;
@@ -114,5 +119,10 @@ public abstract class BasicExtension implements IExtension {
     @Override
     public Image getDarkIcon() {
         return dark_icon;
+    }
+
+    @Override
+    public boolean hasPermission(Permission[] perms) {
+        return perm.hasPermission(perms);
     }
 }
