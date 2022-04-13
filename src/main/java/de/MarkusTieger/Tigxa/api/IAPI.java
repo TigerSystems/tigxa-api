@@ -23,4 +23,7 @@ public interface IAPI {
     IPermissionManager getPermissionManager();
 
     IExtension getExtension();
+
+    String getNamespace();
+
 }
