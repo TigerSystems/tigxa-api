@@ -12,4 +12,6 @@ public interface IWebEngine {
 
     Document getDocument();
 
+    Object executeScript(String script);
+
 }
