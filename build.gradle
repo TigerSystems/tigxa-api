@@ -4,6 +4,7 @@ plugins {
     // id 'signing'
 }
 
+
 group 'de.MarkusTieger'
 archivesBaseName = this.getProject().getName()
 version '1.8.0'
