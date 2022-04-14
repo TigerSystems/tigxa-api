@@ -16,4 +16,6 @@ public interface IWebEngine {
 
     IWebHistory getHistory();
 
+    void loadContent(String content, String type);
+
 }
