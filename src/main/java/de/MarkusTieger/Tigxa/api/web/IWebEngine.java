@@ -20,4 +20,6 @@ public interface IWebEngine {
 
     void reload();
 
+    String getLocation();
+
 }
