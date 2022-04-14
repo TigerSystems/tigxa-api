@@ -14,4 +14,6 @@ public interface IWebEngine {
 
     Object executeScript(String script);
 
+    IWebHistory getHistory();
+
 }
