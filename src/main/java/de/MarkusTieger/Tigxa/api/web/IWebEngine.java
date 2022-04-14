@@ -18,4 +18,6 @@ public interface IWebEngine {
 
     void loadContent(String content, String type);
 
+    void reload();
+
 }
