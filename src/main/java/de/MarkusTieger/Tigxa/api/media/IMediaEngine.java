@@ -1,6 +1,8 @@
 package de.MarkusTieger.Tigxa.api.media;
 
-public interface IMediaEngine {
+import de.MarkusTieger.Tigxa.api.engine.IEngine;
+
+public interface IMediaEngine extends IEngine {
 
     public int getMaxFrame();
 
