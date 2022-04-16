@@ -8,6 +8,8 @@ public interface IWindow {
 
     ITab add(String url, boolean autoselect);
 
+    ITab addMedia(String mrl, boolean autoselect);
+
     ITab add(IScreen screen);
 
     List<ITab> listTabs();
