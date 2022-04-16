@@ -7,7 +7,7 @@ plugins {
 
 group 'de.MarkusTieger'
 archivesBaseName = this.getProject().getName()
-version '1.10.2'
+version '1.10.3'
 
 String env = System.getenv("build_number");
 
