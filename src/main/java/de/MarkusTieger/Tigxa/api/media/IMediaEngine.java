@@ -16,4 +16,6 @@ public interface IMediaEngine {
 
     public void setFrame(int frame);
 
+    public void load(String mrl);
+
 }
