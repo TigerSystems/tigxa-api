@@ -6,10 +6,8 @@ public interface IWebHistory {
 
     public boolean hasForwards();
 
-    public int getCurrentIndex();
+    public void backward();
 
-    public String get(int index);
-
-    public String go(int index);
+    public void forward();
 
 }
