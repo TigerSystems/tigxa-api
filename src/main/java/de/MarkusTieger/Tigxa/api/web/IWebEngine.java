@@ -9,8 +9,6 @@ public interface IWebEngine extends IEngine {
 
     void print();
 
-    void load(String location);
-
     Document getDocument();
 
     Object executeScript(String script);
@@ -20,7 +18,5 @@ public interface IWebEngine extends IEngine {
     void loadContent(String content, String type);
 
     void reload();
-
-    String getLocation();
 
 }

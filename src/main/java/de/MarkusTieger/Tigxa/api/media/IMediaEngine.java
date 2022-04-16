@@ -18,6 +18,4 @@ public interface IMediaEngine extends IEngine {
 
     public void setFrame(int frame);
 
-    public void load(String mrl);
-
 }
